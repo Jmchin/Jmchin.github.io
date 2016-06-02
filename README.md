@@ -1,3 +1,1 @@
-# Jmchin.github.io
-Personal portfolio website
-
+# justin-chin-portfolio
