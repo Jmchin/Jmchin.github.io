@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Justin Chin</title>
+        <title>Justin Chin: Posts Tagged &quot;leetcode&quot;</title>
         
         <meta name="description" content="My personal corner on the internet">
         <meta name="keywords" content="">
@@ -31,7 +31,7 @@
                         <svg class="icon icon-menu" aria-hidden="true"><use xlink:href="/img/icons.svg#icon-menu"></use></svg><span class="menu-text">Menu</span>
                     </label>
                     <ul class="menu">
-                        <li  class="active" ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
+                        <li ><a title="Home" href="/"><div class="menu-item-text">Home</div></a></li>
                         <li ><a title="Archives" href="/archives/"><div class="menu-item-text">Archives</div></a></li>
                         
                         <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
@@ -57,64 +57,17 @@
 
         <article id="main">
             
-<div id="post">
-    <div class="post-header">
-    <div id="post-meta">
-        <h1>Leetcode 1629: Slowest Key</h1>
-        <div class="byline">
-            <span class="date">January 13, 2021</span>
-            
-        </div>
+<div id="posts-by-tag">
+    <div id="page-header">
+        <h1>Posts Tagged &quot;leetcode&quot;</h1>
     </div>
-</div>
-<div>
+    <ul>
     
-    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given a list of integers representing a set of timestamps, and a
-string of letters representing keys pressed corresponding one-to-one
-with the timestamps, return the key which was pressed for the single
-longest duration. <a href="https://leetcode.com/problems/slowest-key/">Leetcode 1629</a></p></blockquote><p><strong>Input</strong> release_times: [Int], keys_pressed: String</p><p><strong>Output</strong> ch: String</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">def slowest_key(release_times, keys_pressed):
-   padded = [0] + release_times
-   deltas = list(map(lambda a, b: b-a, padded, release_times))
-   press_times = sorted(list(zip(deltas, keys_pressed)))
-
-   return press_times[-1][1]
-</code></pre><hr /><h3 id="explanation-and-reasoning">Explanation and Reasoning</h3><ol><li><p>Create new list by prepending 0 to the release times</p></li><li><p>Create new list from mapping a difference function</p></li><li><p>Zip two lists together and sort them by values in the first list</p></li></ol><p>My idea here was to convert the view of the data. What we want to do
-is run a series of transformations over the original input in a
-functional way. We begin by converting our data from a list of
-timestamps to a list of differences, such that each value corresponds
-to the length of a key press. Once we have these values, we zip the
-list together with the keys, and sort it in ascending order with
-comparisons done in the first list. This gives us list of (int, str)
-pairs, sorted in order of keypress time, allowing us to quickly return
-the key that was depressed for the longest time.</p>
-</div>
-
-<div id="post-tags">
-    <br/>
-    <b>Tags: </b>
+        <li>
+            <a href="/posts-output/2021-01-13-LC_1629/">Leetcode 1629: Slowest Key</a>
+        </li>
     
-    <a href="/tags-output/leetcode/">leetcode</a>
-    
-    <a href="/tags-output/python/">python</a>
-    
-</div>
-
-<br/>
-
-    
-
-    
-    <div id="prev-next">
-    
-    <div class="prev"></div>
-    
-    
-    <a class="next" href="/posts-output/2020-12-03-docs/"><div class="nav-text"">Quick Start Guide</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
-    
-</div>
-
-    
-
+    </ul>
 </div>
 
             <hr/>
