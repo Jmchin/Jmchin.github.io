@@ -18,7 +18,7 @@
         <aside id="sidebar">
             <div id="logo">
                 <a title="Justin Chin" href="/">
-                    <img class="icon" src="/img/white-lotus.svg">
+                    <img class="icon" src="/img/artrama-enso.png">
                     <div class="text desktop-and-tablet-only">Justin Chin</div>
                     <div class="text mobile-only">Justin Chin</div>
                 </a>
@@ -38,7 +38,11 @@
                         
                         
                         <li >
-                            <a href="/pages-output/about/"><div class="menu-item-text">About</div></a>
+                            <a href="/pages-output/about/"><div class="menu-item-text">Bio</div></a>
+                        </li>
+                        
+                        <li >
+                            <a href="/pages-output/research-journal/"><div class="menu-item-text">Jupyter</div></a>
                         </li>
                         
                         <!-- <li><a title="RSS" href="/feed.xml"><div class="menu-item-text">RSS</div></a></li> -->
@@ -60,33 +64,24 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta">
-        <h1>Leetcode 1629: Slowest Key</h1>
+        <h1>Leetcode 448: Find All Numbers Disappeared in an Array</h1>
         <div class="byline">
-            <span class="date">January 13, 2021</span>
+            <span class="date">January 18, 2021</span>
             
         </div>
     </div>
 </div>
 <div>
     
-    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given a list of integers representing a set of timestamps, and a
-string of letters representing keys pressed corresponding one-to-one
-with the timestamps, return the key which was pressed for the single
-longest duration. <a href="https://leetcode.com/problems/slowest-key/">Leetcode 1629</a></p></blockquote><p><strong>Input</strong> release_times: [Int], keys_pressed: String</p><p><strong>Output</strong> ch: String</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">def slowest_key(release_times, keys_pressed):
-   padded = [0] + release_times
-   deltas = list(map(lambda a, b: b-a, padded, release_times))
-   press_times = sorted(list(zip(deltas, keys_pressed)))
-
-   return press_times[-1][1]
-</code></pre><hr /><h3 id="explanation-and-reasoning">Explanation and Reasoning</h3><ol><li><p>Create new list by prepending 0 to the release times</p></li><li><p>Create new list from mapping a difference function</p></li><li><p>Zip two lists together and sort them by values in the first list</p></li></ol><p>My idea here was to convert the view of the data. What we want to do
-is run a series of transformations over the original input in a
-functional way. We begin by converting our data from a list of
-timestamps to a list of differences, such that each value corresponds
-to the length of a key press. Once we have these values, we zip the
-list together with the keys, and sort it in ascending order with
-comparisons done in the first list. This gives us list of (int, str)
-pairs, sorted in order of keypress time, allowing us to quickly return
-the key that was depressed for the longest time.</p>
+    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given an array of integers, return a list of all [1,n] inclusive
+elements that are not present in the input</p></blockquote><p><strong>Input</strong> nums: [Int]</p><p><strong>Output</strong> missing: [Int]</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">    def find_missing_numbers(nums):
+        return set(range(1, len(nums) + 1) - set(nums)
+</code></pre><hr /><h3 id="reasoning-and-explanation">Reasoning and Explanation</h3><p>This was a rather straightforward exercise which can be reframed as a
+simple set difference. Once we create sets for the expected elements
+and for the actual elements, we can quickly return the difference
+between them. This could be made more efficient in terms of space, but
+the expressiveness of this single line of code makes the intent behind
+it clear.</p>
 </div>
 
 <div id="post-tags">
@@ -109,7 +104,7 @@ the key that was depressed for the longest time.</p>
     <div class="prev"></div>
     
     
-    <a class="next" href="/posts-output/2020-12-03-docs/"><div class="nav-text"">Quick Start Guide</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    <a class="next" href="/posts-output/2021-01-13-LC_1629/"><div class="nav-text"">Leetcode 1629: Slowest Key</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
     
 </div>
 

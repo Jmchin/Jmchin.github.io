@@ -2,27 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Justin Chin: Bio</title>
+        <title>Justin Chin: Leetcode 448: Find All Numbers Disappeared in an Array</title>
         
+<meta name="keywords" content="leetcode,python,cryogen">
 
-<meta name="description" content="Hello, and welcome to my little corner on the internet!I like to solve problems. Big problems, small problems; I want to put
-the pieces together. These days I do most of my problem solving with
-software. Sometimes that means building an automated pipeline for
-tracing neuron structures, designing and implementing a decentralized,
-and distributed microblogging platform on top of the Raft consensus
-protocol, or developing a back-end web service for consuming and
-validating invoices from the ground up.">
+<meta name="description" content="Problem DefinitionGiven an array of integers, return a list of all [1,n] inclusive
+elements that are not present in the input">
 
-<meta property="og:description" content="Hello, and welcome to my little corner on the internet!I like to solve problems. Big problems, small problems; I want to put
-the pieces together. These days I do most of my problem solving with
-software. Sometimes that means building an automated pipeline for
-tracing neuron structures, designing and implementing a decentralized,
-and distributed microblogging platform on top of the Raft consensus
-protocol, or developing a back-end web service for consuming and
-validating invoices from the ground up.">
+<meta property="og:description" content="Problem DefinitionGiven an array of integers, return a list of all [1,n] inclusive
+elements that are not present in the input">
 
-<meta property="og:url" content="https://www.justinmchin.com/pages-output/about/" />
-<meta property="og:title" content="Bio" />
+<meta property="og:url" content="https://www.justinmchin.com/posts-output/2021-01-18-LC_448/" />
+<meta property="og:title" content="Leetcode 448: Find All Numbers Disappeared in an Array" />
 <meta property="og:type" content="article" />
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -55,7 +46,7 @@ validating invoices from the ground up.">
                         <li ><a title="Tags" href="/tags/"><div class="menu-item-text">Tags</div></a></li>
                         
                         
-                        <li  class="active" >
+                        <li >
                             <a href="/pages-output/about/"><div class="menu-item-text">Bio</div></a>
                         </li>
                         
@@ -79,22 +70,41 @@ validating invoices from the ground up.">
 
         <article id="main">
             
-<div id="custom-page">
-    <div id="page-header">
-        <h1>Bio</h1>
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta">
+        <h1>Leetcode 448: Find All Numbers Disappeared in an Array</h1>
+        <div class="byline">
+            <span class="date">January 18, 2021</span>
+            
+        </div>
     </div>
+</div>
+<div>
     
-    <p>Hello, and welcome to my little corner on the internet!</p><p>I like to solve problems. Big problems, small problems; I want to put
-the pieces together. These days I do most of my problem solving with
-software. Sometimes that means building an automated pipeline for
-tracing neuron structures, designing and implementing a decentralized,
-and distributed microblogging platform on top of the Raft consensus
-protocol, or developing a back-end web service for consuming and
-validating invoices from the ground up.</p><p>I have worked in collaborative team settings, and I have led my own
-efforts. You will find me just as comfortable managing any phase of
-the software development lifecycle, from design and inception, through
-development, iteration and maintenance.</p><p>I am an educator, a researcher, and developer. Sometimes I write about
-it.</p>
+    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given an array of integers, return a list of all [1,n] inclusive
+elements that are not present in the input</p></blockquote><p><strong>Input</strong> nums: [Int]</p><p><strong>Output</strong> missing: [Int]</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">    def find_missing_numbers(nums):
+        return set(range(1, len(nums) + 1) - set(nums)
+</code></pre><hr /><h3 id="reasoning-and-explanation">Reasoning and Explanation</h3><p>This was a rather straightforward exercise which can be reframed as a
+simple set difference. Once we create sets for the expected elements
+and for the actual elements, we can quickly return the difference
+between them. This could be made more efficient in terms of space, but
+the expressiveness of this single line of code makes the intent behind
+it clear.</p>
+</div>
+
+<div id="post-tags">
+    <br/>
+    <b>Tags: </b>
+    
+    <a href="/tags-output/leetcode/">leetcode</a>
+    
+    <a href="/tags-output/python/">python</a>
+    
+</div>
+
+<br/>
+
 
     
     <div id="prev-next">
@@ -102,11 +112,14 @@ it.</p>
     <div class="prev"></div>
     
     
-    <a class="next" href="/pages-output/research-journal/"><div class="nav-text"">Jupyter</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    <a class="next" href="/posts-output/2021-01-13-LC_1629/"><div class="nav-text"">Leetcode 1629: Slowest Key</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
     
 </div>
 
     
+
+    
+
 
 </div>
 
