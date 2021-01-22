@@ -64,24 +64,42 @@
 <div id="post">
     <div class="post-header">
     <div id="post-meta">
-        <h1>Leetcode 448: Find All Numbers Disappeared in an Array</h1>
+        <h1>Leetcode 747: Largest Number At Least Twice of Others</h1>
         <div class="byline">
-            <span class="date">January 18, 2021</span>
+            <span class="date">January 21, 2021</span>
             
         </div>
     </div>
 </div>
 <div>
     
-    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given an array of integers, return a list of all [1,n] inclusive
-elements that are not present in the input</p></blockquote><p><strong>Input</strong> nums: [Int]</p><p><strong>Output</strong> missing: [Int]</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">    def find_missing_numbers(nums):
-        return set(range(1, len(nums) + 1) - set(nums)
-</code></pre><hr /><h3 id="reasoning-and-explanation">Reasoning and Explanation</h3><p>This was a rather straightforward exercise which can be reframed as a
-simple set difference. Once we create sets for the expected elements
-and for the actual elements, we can quickly return the difference
-between them. This could be made more efficient in terms of space, but
-the expressiveness of this single line of code makes the intent behind
-it clear.</p>
+    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given an array of integers, find the index of the largest element in
+the array which is  at least twice as much as  every other number in
+the  array.  If   no  such  element  exists,   return  -1.
+-- <a href="https://leetcode.com/problems/largest-number-at-least-twice-of-others/">Leetcode 747</a></p></blockquote><p><strong>Input</strong> nums: [Int]</p><p><strong>Output</strong> idx: Int</p><h3 id="solution">Solution</h3><pre><code class="python">    def dominantIndex(nums):
+        if len(nums) &lt; 2:
+          return 0
+
+        d = {}
+        for i, n in enumerate(nums):
+          d[n] = i
+
+        nums.sort()
+
+        if (nums[-1] &gt;= nums[-2] * 2):
+          return d[nums[-1]]
+
+        return -1
+</code></pre><h3 id="explanation-and-reasoning">Explanation and reasoning</h3><p>Whenever possible I like to reduce my algorithm designs to another
+problem. For this problem I reduced it to sorting by introducing an
+additional intermediary dictionary, which is populated by {value :
+index} pairs upon a single forward scan of the input. Once this
+structure is populated, we simply sort the input and compare the last
+and second to last elements. Because the list is now in sorted order,
+if the predicate holds true for the second to last element, it holds
+true for every other element preceding it. If the test is true, we
+index into the dictionary using the value, and return the associated
+index.</p>
 </div>
 
 <div id="post-tags">
@@ -104,7 +122,7 @@ it clear.</p>
     <div class="prev"></div>
     
     
-    <a class="next" href="/posts-output/2021-01-13-LC_1629/"><div class="nav-text"">Leetcode 1629: Slowest Key</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    <a class="next" href="/posts-output/2021-01-18-LC_448/"><div class="nav-text"">Leetcode 448: Find All Numbers Disappeared in an Array</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
     
 </div>
 

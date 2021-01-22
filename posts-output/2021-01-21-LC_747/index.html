@@ -2,24 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Justin Chin: Leetcode 1629: Slowest Key</title>
+        <title>Justin Chin: Leetcode 747: Largest Number At Least Twice of Others</title>
         
 <meta name="keywords" content="leetcode,python,cryogen">
 
-<meta name="description" content="Problem DefinitionGiven a list of integers representing a set of timestamps, and a
-string of letters representing keys pressed corresponding one-to-one
-with the timestamps, return the key which was pressed for the single
-longest duration.
--- Leetcode 1629">
+<meta name="description" content="Problem DefinitionGiven an array of integers, find the index of the largest element in
+the array which is  at least twice as much as  every other number in
+the  array.  If   no  such  element  exists,   return  -1.
+-- Leetcode 747">
 
-<meta property="og:description" content="Problem DefinitionGiven a list of integers representing a set of timestamps, and a
-string of letters representing keys pressed corresponding one-to-one
-with the timestamps, return the key which was pressed for the single
-longest duration.
--- Leetcode 1629">
+<meta property="og:description" content="Problem DefinitionGiven an array of integers, find the index of the largest element in
+the array which is  at least twice as much as  every other number in
+the  array.  If   no  such  element  exists,   return  -1.
+-- Leetcode 747">
 
-<meta property="og:url" content="https://www.justinmchin.com/posts-output/2021-01-13-LC_1629/" />
-<meta property="og:title" content="Leetcode 1629: Slowest Key" />
+<meta property="og:url" content="https://www.justinmchin.com/posts-output/2021-01-21-LC_747/" />
+<meta property="og:title" content="Leetcode 747: Largest Number At Least Twice of Others" />
 <meta property="og:type" content="article" />
 
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -79,34 +77,42 @@ longest duration.
 <div id="post">
     <div class="post-header">
     <div id="post-meta">
-        <h1>Leetcode 1629: Slowest Key</h1>
+        <h1>Leetcode 747: Largest Number At Least Twice of Others</h1>
         <div class="byline">
-            <span class="date">January 13, 2021</span>
+            <span class="date">January 21, 2021</span>
             
         </div>
     </div>
 </div>
 <div>
     
-    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given a list of integers representing a set of timestamps, and a
-string of letters representing keys pressed corresponding one-to-one
-with the timestamps, return the key which was pressed for the single
-longest duration.
--- <a href="https://leetcode.com/problems/slowest-key/">Leetcode 1629</a></p></blockquote><p><strong>Input</strong> release_times: [Int], keys_pressed: String</p><p><strong>Output</strong> ch: String</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">def slowest_key(release_times, keys_pressed):
-   padded = [0] + release_times
-   deltas = list(map(lambda a, b: b-a, padded, release_times))
-   press_times = sorted(list(zip(deltas, keys_pressed)))
+    <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given an array of integers, find the index of the largest element in
+the array which is  at least twice as much as  every other number in
+the  array.  If   no  such  element  exists,   return  -1.
+-- <a href="https://leetcode.com/problems/largest-number-at-least-twice-of-others/">Leetcode 747</a></p></blockquote><p><strong>Input</strong> nums: [Int]</p><p><strong>Output</strong> idx: Int</p><h3 id="solution">Solution</h3><pre><code class="python">    def dominantIndex(nums):
+        if len(nums) &lt; 2:
+          return 0
 
-   return press_times[-1][1]
-</code></pre><hr /><h3 id="explanation-and-reasoning">Explanation and Reasoning</h3><ol><li><p>Create new list by prepending 0 to the release times</p></li><li><p>Create new list from mapping a difference function</p></li><li><p>Zip two lists together and sort them by values in the first list</p></li></ol><p>My idea here was to convert the view of the data. What we want to do
-is run a series of transformations over the original input in a
-functional way. We begin by converting our data from a list of
-timestamps to a list of differences, such that each value corresponds
-to the length of a key press. Once we have these values, we zip the
-list together with the keys, and sort it in ascending order with
-comparisons done in the first list. This gives us list of (int, str)
-pairs, sorted in order of keypress time, allowing us to quickly return
-the key that was depressed for the longest time.</p>
+        d = {}
+        for i, n in enumerate(nums):
+          d[n] = i
+
+        nums.sort()
+
+        if (nums[-1] &gt;= nums[-2] * 2):
+          return d[nums[-1]]
+
+        return -1
+</code></pre><h3 id="explanation-and-reasoning">Explanation and reasoning</h3><p>Whenever possible I like to reduce my algorithm designs to another
+problem. For this problem I reduced it to sorting by introducing an
+additional intermediary dictionary, which is populated by {value :
+index} pairs upon a single forward scan of the input. Once this
+structure is populated, we simply sort the input and compare the last
+and second to last elements. Because the list is now in sorted order,
+if the predicate holds true for the second to last element, it holds
+true for every other element preceding it. If the test is true, we
+index into the dictionary using the value, and return the associated
+index.</p>
 </div>
 
 <div id="post-tags">
@@ -125,10 +131,10 @@ the key that was depressed for the longest time.</p>
     
     <div id="prev-next">
     
-    <a class="prev" href="/posts-output/2021-01-18-LC_448/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Leetcode 448: Find All Numbers Disappeared in an Array</div></a>
+    <div class="prev"></div>
     
     
-    <a class="next" href="/posts-output/2020-12-03-docs/"><div class="nav-text"">Quick Start Guide</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
+    <a class="next" href="/posts-output/2021-01-18-LC_448/"><div class="nav-text"">Leetcode 448: Find All Numbers Disappeared in an Array</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
     
 </div>
 

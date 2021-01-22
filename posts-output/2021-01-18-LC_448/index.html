@@ -7,10 +7,12 @@
 <meta name="keywords" content="leetcode,python,cryogen">
 
 <meta name="description" content="Problem DefinitionGiven an array of integers, return a list of all [1,n] inclusive
-elements that are not present in the input">
+elements that are not present in the input.
+-- Leetcode 448">
 
 <meta property="og:description" content="Problem DefinitionGiven an array of integers, return a list of all [1,n] inclusive
-elements that are not present in the input">
+elements that are not present in the input.
+-- Leetcode 448">
 
 <meta property="og:url" content="https://www.justinmchin.com/posts-output/2021-01-18-LC_448/" />
 <meta property="og:title" content="Leetcode 448: Find All Numbers Disappeared in an Array" />
@@ -83,7 +85,8 @@ elements that are not present in the input">
 <div>
     
     <h3 id="problem-definition">Problem Definition</h3><blockquote><p>Given an array of integers, return a list of all [1,n] inclusive
-elements that are not present in the input</p></blockquote><p><strong>Input</strong> nums: [Int]</p><p><strong>Output</strong> missing: [Int]</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">    def find_missing_numbers(nums):
+elements that are not present in the input.
+-- <a href="https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/">Leetcode 448</a></p></blockquote><p><strong>Input</strong> nums: [Int]</p><p><strong>Output</strong> missing: [Int]</p><hr /><h3 id="solution">Solution</h3><pre><code class="python">    def find_missing_numbers(nums):
         return set(range(1, len(nums) + 1) - set(nums)
 </code></pre><hr /><h3 id="reasoning-and-explanation">Reasoning and Explanation</h3><p>This was a rather straightforward exercise which can be reframed as a
 simple set difference. Once we create sets for the expected elements
@@ -109,7 +112,7 @@ it clear.</p>
     
     <div id="prev-next">
     
-    <div class="prev"></div>
+    <a class="prev" href="/posts-output/2021-01-21-LC_747/"><svg class="icon icon-circle-left"><use xlink:href="/img/icons.svg#icon-circle-left"></use></svg><div class="nav-text">Leetcode 747: Largest Number At Least Twice of Others</div></a>
     
     
     <a class="next" href="/posts-output/2021-01-13-LC_1629/"><div class="nav-text"">Leetcode 1629: Slowest Key</div><svg class="icon icon-circle-right"><use xlink:href="/img/icons.svg#icon-circle-right"></use></svg></a>
